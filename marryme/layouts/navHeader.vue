@@ -1,16 +1,8 @@
 <template>
   <v-app class="app">
-    <div class="head">
-      <v-toolbar color="#fff7fb" prominent fixed>
-        <h1 class="pink--text mt-8">Marry.me</h1>
-        <v-icon class="mt-11" color="black lighten-5">mdi-ring</v-icon>
-        <v-spacer></v-spacer>
-        <MenuOptions />
-        <v-spacer></v-spacer>
-        <ExitButton />
-      </v-toolbar>
-      <v-divider ></v-divider>
-    </div>
+    <MenuMini />
+    <Toolbar /> 
+    <v-divider ></v-divider>  
     <v-main class="main">
       <v-container fluid fill-height>
         <Nuxt />
@@ -23,19 +15,16 @@
 </template>
 
 <script>
-import ExitButton from "~/components/menu/exitButton.vue";
-import MenuOptions from '~/components/menu/navigationItems.vue';
+
 import InfoFooter from '~/components/home/footerCard.vue';
+import MenuMini from '~/components/menu/navigationMini.vue';
+import Toolbar from '~/components/menu/toolbar.vue';
 
 export default {
   components: {
-    ExitButton,
-    MenuOptions,
-    InfoFooter
-  },
-
-  data: () => ({}),
-  methods: {
+    InfoFooter,
+    MenuMini,
+    Toolbar
   },
 };
 </script>

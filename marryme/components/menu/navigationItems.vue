@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-auto mt-9">
+  <div>
     <v-tabs v-model="tab" background-color="transparent" class="mb-5" color="blue">
       <v-tab v-for="(option,i) in options" :key="i" class="mx-4" :to="option.link">
         {{option.text}}   
@@ -15,10 +15,10 @@ export default {
     tab: 1,
 
     options: [
-      {text: 'Detalhes do Evento', color: '#5D8777', link: 'event'},
-      {text: 'Lista de Convidados', color: '#59302D', link: 'guests'},
-      {text: 'Lista de Presentes', color: '#F27BAC' , link: 'gifts'},
-      {text: 'Nossa história', color: 'success' , link: 'aboutUs'},      
+      {text: 'Evento', color: '#5D8777', link: 'event'},
+      {text: 'Convidados', color: '#59302D', link: 'guests'},
+      {text: 'Presentes', color: '#F27BAC' , link: 'gifts'},
+      {text: 'Sobre Nós', color: 'success' , link: 'aboutUs'},      
     ],
 
   })

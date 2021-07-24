@@ -1,13 +1,13 @@
 <template>
   <v-app class="app">
     <div class="header">
-      <v-toolbar color="pink lighten-2" fixed prominent>
-        <h1 class="white--text mt-8">Marry.me</h1>
-        <v-icon class="mt-11" >mdi-ring</v-icon>
+      <v-toolbar color="#fff2f9" fixed prominent>
+        <h1 class="pink--text mt-8">Marry.me</h1>
+        <v-icon class="mt-11" color="black lighten-5">mdi-ring</v-icon>
         <v-spacer></v-spacer>
-        <span class="font mt-8 mr-10 white--text"
-          >"O melhor site para organizar o seu casamento"</span
-        >
+          <span class="font mt-8 mr-10 pink--text">
+            "O melhor site para organizar o seu casamento"
+          </span>
         <v-spacer></v-spacer>
         <LoginDialog />
       </v-toolbar>

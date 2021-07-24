@@ -21,7 +21,7 @@
       </v-col>
 
       <v-row justify="center" class="mb-2">
-        <v-btn rounded @click="submitForm" color="blue" class="white--text"> 
+        <v-btn @click="submitForm" color="blue" class="white--text"> 
           Entrar
         </v-btn>
       </v-row>

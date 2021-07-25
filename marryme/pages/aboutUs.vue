@@ -11,7 +11,7 @@
           <v-spacer></v-spacer>
           <v-tooltip bottom>
             <template v-slot:activator="{on: btn1}">
-              <v-btn class="mx-2" v-on="btn1" fab small color="green lighten-1" @click="write = true">
+              <v-btn class="mx-2" v-on="btn1" fab small color="green lighten-2" @click="write = true">
                 <v-icon color="white">mdi-check</v-icon>
               </v-btn>
             </template>
@@ -19,7 +19,7 @@
           </v-tooltip>
           <v-tooltip bottom>
             <template v-slot:activator="{on: btn2}" >
-              <v-btn class="mx-2" v-on="btn2" fab large color="blue accent-2" @click="write = false">
+              <v-btn class="mx-2" v-on="btn2" fab large color="blue lighten-1" @click="write = false">
                 <v-icon color="white">mdi-pencil</v-icon>
               </v-btn>
             </template>

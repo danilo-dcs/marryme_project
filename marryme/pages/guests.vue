@@ -1,28 +1,27 @@
 <template>
   <v-container fluid fill-height>
-
     <v-dialog v-model="dialog" width="550">
       <v-card height="400" width="550">
-        <v-form ref="form" lazy-validation >
+        <v-form v-model="valid" ref="form" lazy-validation >
           <v-container>
             <v-row justify="left" class="mt-5">
               <v-col cols="8" >
-                <v-text-field v-model="newGuest.name" label="Nome" :rules="rules.default" ></v-text-field>
+                <v-text-field v-model="newGuest.name" label="Nome" :rules="rules.default" required ></v-text-field>
               </v-col>
               <v-col cols="4" >
-                <v-text-field v-model="newGuest.phone" v-mask="['(##) ####-####','(##) #####-####']"
+                <v-text-field v-model="newGuest.phone" counter="15" 
                 label="Telefone" :rules="rules.default" ></v-text-field>
               </v-col>
             </v-row>
 
             <v-row justify="left">
               <v-col cols="8" >
-                <v-text-field v-model="newGuest.email" label="E-mail" :rules="rules.email" > </v-text-field>
+                <v-text-field v-model="newGuest.email" label="E-mail" :rules="rules.email" required> </v-text-field>
               </v-col>
             </v-row>
             <v-row justify="left">
               <v-col cols="12" >
-                <v-text-field v-model="newGuest.adress" label="Endereço" :rules="rules.default" ></v-text-field>
+                <v-text-field v-model="newGuest.adress" label="Endereço" :rules="rules.default" required ></v-text-field>
               </v-col>
             </v-row>
             <v-row justify="center" class="mt-5">
@@ -106,7 +105,17 @@ export default {
 
     dialog: false,
 
+    valid: true,
+
     newGuest: {
+      name: '',
+      email: '',
+      adress: '',
+      phone: '',
+      avatar: defaultAvatar,
+    },
+
+    defaultGuest: {
       name: '',
       email: '',
       adress: '',
@@ -131,9 +140,13 @@ export default {
 
   },
 
+  watch: {
+  },
+
   methods: {
 
     addGuest(){
+      this.reset()
       this.dialog = true;
     },
 
@@ -141,9 +154,23 @@ export default {
       this.guestList.splice(index,1)
     },
     createGuest(){
-      this.guestList.push(this.newGuest);
-      this.dialog = false;
-    }
+      if(this.valid){
+        let objc = {
+          name: this.newGuest.name,
+          email: this.newGuest.email,
+          adress: this.newGuest.adress,
+          phone: this.newGuest.phone,
+          avatar: this.newGuest.avatar
+        }
+        this.guestList.push(objc);
+        this.dialog = false;
+      }else{
+        alert("Preencha os campos corretamente")
+      }
+    },
+    reset(){
+      this.newGuest = this.defaultGuest;
+    },
   }
 
 }

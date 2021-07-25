@@ -2,9 +2,9 @@
   <v-container fluid fill-height>
     <v-col cols="11" md="11" sm="8">
       <v-card class="mx-auto mt-15 mb-10" min-height="350px" 
-      flat width="60%" color="grey lighten-3">
+      flat width="60%" color="#fcf9f7" >
       <v-card-title>
-        <v-toolbar flat width="100%" color="grey lighten-3">
+        <v-toolbar flat width="100%" color="#fcf9f7">
           <v-toolbar-title class="font-weight-bold text-lg-h4 text-md-h5">
             <span class="pink--text">Nossa História</span>
           </v-toolbar-title>
@@ -31,7 +31,7 @@
       <v-card-text>
         <v-container fluid >
           <v-card color="white">
-            <v-textarea v-model="story" class="mt-10" auto-grow clearable clear-icon="mdi-eraser"
+            <v-textarea v-model="story" class="mt-10" auto-grow
               placeholder=" Nos conte a sua história" color="pink" 
               :readonly="write" full-width type="text">
             </v-textarea>
@@ -57,5 +57,6 @@ export default {
 </script>
 
 <style>
+
 
 </style>

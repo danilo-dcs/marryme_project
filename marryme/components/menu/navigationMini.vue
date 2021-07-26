@@ -37,9 +37,8 @@ export default {
       {text: 'Evento', color: '#5D8777', link: 'event', icon: 'mdi-calendar-star'},
       {text: 'Convidados', color: '#59302D', link: 'guests', icon: 'mdi-account-group'},
       {text: 'Presentes', color: '#F27BAC' , link: 'gifts' , icon: 'mdi-gift-open'},
-      {text: 'Sobre Nós', color: 'success' , link: 'aboutUs' , icon: 'mdi-information-variant'},      
+      {text: 'História', color: 'success' , link: 'aboutUs' , icon: 'mdi-information-variant'},      
     ],
-
   }),
 
   computed: {

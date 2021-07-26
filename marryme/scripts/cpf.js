@@ -1,6 +1,7 @@
 export default {
    validation: (strCPF) => {
       strCPF = String(strCPF);
+      strCPF = strCPF.replaceAll('.','').replaceAll('-','')
       var Soma;
       var Resto;
       Soma = 0;

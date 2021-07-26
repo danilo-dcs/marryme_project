@@ -1,8 +1,7 @@
 <template>
-  <v-container fluid fill-height>
-    <v-col cols="11" md="12" sm="12">
+    <v-col cols="12" lg="8" md="9" sm="10" xs="12" class="mx-auto">
       <v-card class="mx-auto mt-15 mb-10" min-height="350px" outlined 
-      flat width="60%" color="#fcf9f7" >
+      flat width="100%" color="#fcf9f7" >
       <v-card-title>
         <v-toolbar flat width="100%" color="#fcf9f7">
           <v-toolbar-title class="font-weight-bold text-lg-h4 text-md-h5">
@@ -30,11 +29,11 @@
       </v-card-title>
 
       <v-card-text>
-        <v-card class="mt-10" color="white" min-height="350">
+        <v-card class="mt-10" width="100%" color="white" min-height="350" >
           
-          <v-row>
+          <v-row justify="center" align="center">
             <!-- // coluna da imagem -->
-            <v-col cols="5" lg="5" md="10" sm="10" class="ml-5">
+            <v-col cols="11" lg="5" md="9" sm="10" xs="11">
               <v-hover v-slot="{ hover }">
                 <v-card :elevation="hover ? 12 : 3" :class="{ 'on-hover' : hover} " >
                   <v-img :src="imgSrc" :lazy-src="imgLazy" >
@@ -58,7 +57,7 @@
             </v-col>
 
             <!-- // coluna dos campos -->
-            <v-col cols="6" lg="6" md="12" sm="12" class="mt-6" >
+            <v-col cols="12" lg="6" md="11" sm="11" xs="12" class="mt-6" >
               <v-row justify="center" class="mx-1">
                 <v-text-field v-model="invitation.grooms" prepend-icon="mdi-account-supervisor-circle" label="Noivos" :readonly="lock" ></v-text-field>
               </v-row>
@@ -83,7 +82,6 @@
       </v-card-text>
     </v-card>
     </v-col>
-  </v-container>
 </template>
 
 <script>

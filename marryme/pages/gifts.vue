@@ -1,11 +1,11 @@
 <template>
-  <v-container fluid fill-height>
-    <v-dialog v-model="dialog" width="600">
-      <v-card min-height="400" width="600"  >
+  <v-col cols="12" lg="8" md="9" sm="10" xs="12" class="mx-auto">
+    <v-dialog :attach="true" v-model="dialog" max-width="500" >
+      <v-card min-height="400" width="100%"  >
         <v-form v-model="valid" ref="form" lazy-validation >
           <v-container>
             <v-row justify="left" class="mt-5">
-              <v-col cols="8" >
+              <v-col cols="12" >
                 <v-text-field v-model="newGift.product" label="Item" :rules="rules.default" required></v-text-field>
               </v-col>
             </v-row>
@@ -30,65 +30,63 @@
       </v-card>
     </v-dialog>
 
-    <v-col cols="11" md="12" sm="12">
-      <v-card class="mx-auto mt-15 mb-10" min-height="350px" outlined 
-      flat width="60%" color="#fcf9f7" >
-      <v-card-title>
-        <v-toolbar flat width="100%" color="#fcf9f7">
-          <v-toolbar-title class="font-weight-bold text-lg-h4 text-md-h5">
-            <span class="pink--text">Lista de Presentes</span>
-          </v-toolbar-title>
-          <v-spacer></v-spacer>
-          <v-tooltip bottom>
-            <template v-slot:activator="{on: tooltip}" >
-              <v-btn class="mx-2" v-on="{...tooltip}" fab small color="purple lighten-1" @click="share">
-                <v-icon color="white">mdi-share-variant</v-icon>
-              </v-btn>
-            </template>
-            <span> Compartilhar lista com convidados </span>
-          </v-tooltip>
-          <v-tooltip bottom>
-            <template v-slot:activator="{on: tooltip}" >
-              <v-btn class="mx-2" v-on="{...tooltip}" fab large color="blue lighten-1" @click="addGift">
-                <v-icon color="white">mdi-plus</v-icon>
-              </v-btn>
-            </template>
-            <span> Adicionar presente </span>
-          </v-tooltip>
-        </v-toolbar>
-      </v-card-title>
+    <v-card class="mx-auto mt-15 mb-10" min-height="350px" outlined 
+    flat width="100%" color="#fcf9f7" >
+    <v-card-title>
+      <v-toolbar flat width="100%" color="#fcf9f7">
+        <v-toolbar-title class="font-weight-bold text-lg-h4 text-md-h5">
+          <span class="pink--text">Lista de Presentes</span>
+        </v-toolbar-title>
+        <v-spacer></v-spacer>
+        <v-tooltip bottom>
+          <template v-slot:activator="{on: tooltip}" >
+            <v-btn class="mx-2" v-on="{...tooltip}" fab small color="purple lighten-1" @click="share">
+              <v-icon color="white">mdi-share-variant</v-icon>
+            </v-btn>
+          </template>
+          <span> Compartilhar lista com convidados </span>
+        </v-tooltip>
+        <v-tooltip bottom>
+          <template v-slot:activator="{on: tooltip}" >
+            <v-btn class="mx-2" v-on="{...tooltip}" fab large color="blue lighten-1" @click="addGift">
+              <v-icon color="white">mdi-plus</v-icon>
+            </v-btn>
+          </template>
+          <span> Adicionar presente </span>
+        </v-tooltip>
+      </v-toolbar>
+    </v-card-title>
 
-      <v-card-text>
-        <v-container fluid >
-          <v-card color="white">
-            <v-list three-line>
-              <template v-for="(item,index) in giftsList">
-                <v-list-item :key="item.id">
-                  <v-list-item-content>
-                    <v-list-item-title>{{item.product}}</v-list-item-title>
-                    <v-list-item-subtitle> {{item.description}} </v-list-item-subtitle>
-                    <v-list-item-subtitle> <a :href="item.link"> {{item.link}} </a> </v-list-item-subtitle>
-                  </v-list-item-content>
+    <v-card-text>
+      <v-container fluid >
+        <v-card color="white">
+          <v-list three-line>
+            <template v-for="(item,index) in giftsList">
+              <v-list-item :key="item.id">
+                <v-list-item-content>
+                  <v-list-item-title>{{item.product}}</v-list-item-title>
+                  <v-list-item-subtitle> {{item.description}} </v-list-item-subtitle>
+                  <v-list-item-subtitle> <a :href="item.link"> {{item.link}} </a> </v-list-item-subtitle>
+                </v-list-item-content>
 
-                  <v-list-item-action>
-                    <v-tooltip bottom>
-                      <template #activator="{on: tooltip}" >
-                        <v-icon v-on="tooltip" color="red" 
-                          @click="removeGift(index)"
-                        >mdi-minus-circle</v-icon>
-                      </template>
-                      <span>Remover item</span>
-                    </v-tooltip>
-                  </v-list-item-action>
-                </v-list-item>
-              </template>
-            </v-list>
-          </v-card>
-        </v-container>
-      </v-card-text>
-    </v-card>
-    </v-col>
-  </v-container>
+                <v-list-item-action>
+                  <v-tooltip bottom>
+                    <template #activator="{on: tooltip}" >
+                      <v-icon v-on="tooltip" color="red" 
+                        @click="removeGift(index)"
+                      >mdi-minus-circle</v-icon>
+                    </template>
+                    <span>Remover item</span>
+                  </v-tooltip>
+                </v-list-item-action>
+              </v-list-item>
+            </template>
+          </v-list>
+        </v-card>
+      </v-container>
+    </v-card-text>
+  </v-card>
+  </v-col>
 </template>
 
 <script>

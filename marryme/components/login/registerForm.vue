@@ -32,8 +32,9 @@
         label="Cpf:"
         :rules="formRules.cpf"
         rounded
-        counter="11"
+        counter="14"
         outlined
+        v-mask="['###.###.###-##']"
         color="blue"
       >
       </v-text-field>

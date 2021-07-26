@@ -1,7 +1,7 @@
 <template>
   <v-container fluid fill-height>
-    <v-dialog v-model="dialog" width="550">
-      <v-card height="400" width="550">
+    <v-dialog v-model="dialog" width="600">
+      <v-card height="400" width="600">
         <v-form v-model="valid" ref="form" lazy-validation >
           <v-container>
             <v-row justify="left" class="mt-5">
@@ -35,13 +35,13 @@
     </v-dialog>
 
 
-    <v-col cols="11" md="11" sm="8">
+    <v-col cols="11" md="12" sm="12">
       <v-card class="mx-auto mt-15 mb-10" min-height="350px" outlined 
       flat width="60%" color="#fcf9f7" >
       <v-card-title>
         <v-toolbar flat width="100%" color="#fcf9f7">
           <v-toolbar-title class="font-weight-bold text-lg-h4 text-md-h5">
-            <span class="pink--text">Lista de Convidados</span>
+            <span class="pink--text ">Lista de Convidados</span>
           </v-toolbar-title>
           <v-spacer></v-spacer>
           <v-tooltip bottom>

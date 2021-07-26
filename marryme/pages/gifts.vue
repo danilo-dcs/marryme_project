@@ -1,7 +1,7 @@
 <template>
   <v-container fluid fill-height>
-    <v-dialog v-model="dialog" width="550">
-      <v-card min-height="400" width="550"  >
+    <v-dialog v-model="dialog" width="600">
+      <v-card min-height="400" width="600"  >
         <v-form v-model="valid" ref="form" lazy-validation >
           <v-container>
             <v-row justify="left" class="mt-5">
@@ -30,7 +30,7 @@
       </v-card>
     </v-dialog>
 
-    <v-col cols="11" md="11" sm="8">
+    <v-col cols="11" md="12" sm="12">
       <v-card class="mx-auto mt-15 mb-10" min-height="350px" outlined 
       flat width="60%" color="#fcf9f7" >
       <v-card-title>
@@ -41,7 +41,7 @@
           <v-spacer></v-spacer>
           <v-tooltip bottom>
             <template v-slot:activator="{on: tooltip}" >
-              <v-btn class="mx-2" v-on="{...tooltip}" fab small color="purple lighten-2" @click="share">
+              <v-btn class="mx-2" v-on="{...tooltip}" fab small color="purple lighten-1" @click="share">
                 <v-icon color="white">mdi-share-variant</v-icon>
               </v-btn>
             </template>

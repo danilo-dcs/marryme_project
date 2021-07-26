@@ -9,8 +9,8 @@
                 <v-text-field v-model="newGuest.name" label="Nome" :rules="rules.default" required ></v-text-field>
               </v-col>
               <v-col cols="4" >
-                <v-text-field v-model="newGuest.phone" counter="15" 
-                label="Telefone" :rules="rules.default" ></v-text-field>
+                <v-text-field v-model="newGuest.phone" counter="11" 
+                label="Telefone" :rules="rules.phone" ></v-text-field>
               </v-col>
             </v-row>
 
@@ -127,7 +127,10 @@ export default {
 
     rules: {
       default: [ v=> !!v || "Campo vazio" ],
-      email: [ v => (v &&  /.+@.+\..+/.test(v)) || 'Digite um email válido' ]
+      email: [ v => (v &&  /.+@.+\..+/.test(v)) || 'Digite um email válido' ],
+      phone: [ v=> !!v || "Campo vazio" , 
+              v => (v && v.length > 7) || "Digite pelo menos 8 dígitos"
+              ]
     },
 
   }),

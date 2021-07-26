@@ -32,6 +32,7 @@
         label="Cpf:"
         :rules="formRules.cpf"
         rounded
+        counter="11"
         outlined
         color="blue"
       >
@@ -91,8 +92,8 @@ export default {
     formRules: {
       name: [(text) => !!text || "Digite um nome"],
       cpf: [
-        (text) => !!text || "Digite um CPF",
-        (text) => (text && cpf.validation(text)) || "Digite um cpf válido",
+        (text) => !!text || "Digite um Cpf",
+        (text) => (text && cpf.validation(text)) || "Digite um Cpf válido",
       ],
       email: [
         (text) => !!text || "Digite um email",
@@ -101,6 +102,10 @@ export default {
       password: [(text) => !!text || "Digite uma senha"],
     },
   }),
+
+  computed:{
+
+  },
 
   methods: {
     ...mapMutations("login", ["SET_DIALOG_MODE"]),

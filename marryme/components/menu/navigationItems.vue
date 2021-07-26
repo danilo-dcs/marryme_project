@@ -18,7 +18,7 @@ export default {
       {text: 'Evento', color: '#5D8777', link: 'event'},
       {text: 'Convidados', color: '#59302D', link: 'guests'},
       {text: 'Presentes', color: '#F27BAC' , link: 'gifts'},
-      {text: 'Sobre Nós', color: 'success' , link: 'aboutUs'},      
+      {text: 'História', color: 'success' , link: 'aboutUs'},      
     ],
 
   })

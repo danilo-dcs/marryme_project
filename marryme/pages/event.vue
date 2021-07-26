@@ -36,22 +36,17 @@
             <v-col cols="11" lg="5" md="9" sm="10" xs="11">
               <v-hover v-slot="{ hover }">
                 <v-card :elevation="hover ? 12 : 3" :class="{ 'on-hover' : hover} " >
-                  <v-img :src="imgSrc" :lazy-src="imgLazy" >
 
-                    <template v-slot:placeholder>
-                      <v-row class="fill-height ma-0" align="center" justify="center">
-                        <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
-                      </v-row>
-                    </template>
-
+                  <!-- <v-img :src="imgSrc"> -->
+                  <img :src="imgSrc" alt="" width="100%">
                     <v-container fluid fill-height class="justify-center" >
-                      <v-btn icon :class="{ 'show-btns': hover }" :color="transparent" >
+                      <v-btn small icon :class="{ 'show-btns': hover }" :color="transparent" >
                         <v-icon :class="{ 'show-btns': hover }" :color="transparent" >
                           mdi-pencil
                         </v-icon>
                       </v-btn>
                     </v-container>
-                  </v-img>
+                  <!-- </v-img> -->
                 </v-card>
               </v-hover>
             </v-col>
@@ -134,7 +129,7 @@ export default {
 }
 
 .show-btns {
-  color: grey !important;
+  color: #03A9F4 !important;
 }
 </style>
 

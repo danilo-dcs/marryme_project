@@ -37,7 +37,14 @@
             <v-col cols="5" lg="5" md="10" sm="10" class="ml-5">
               <v-hover v-slot="{ hover }">
                 <v-card :elevation="hover ? 12 : 3" :class="{ 'on-hover' : hover} " >
-                  <v-img :src="imgSrc"  >
+                  <v-img :src="imgSrc" :lazy-src="imgLazy" >
+
+                    <template v-slot:placeholder>
+                      <v-row class="fill-height ma-0" align="center" justify="center">
+                        <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+                      </v-row>
+                    </template>
+
                     <v-container fluid fill-height class="justify-center" >
                       <v-btn icon :class="{ 'show-btns': hover }" :color="transparent" >
                         <v-icon :class="{ 'show-btns': hover }" :color="transparent" >
@@ -81,12 +88,16 @@
 
 <script>
 var img = require('~/assets/img/weddingplace.jpg')
+var img2 = require('~/assets/img/weddingplace3.jpg')
+
 export default {
   layout: 'navHeader',
 
   data: () => ({
 
     imgSrc: img,
+    imgLazy: img2,
+
     transparent: 'rgba(255, 255, 255, 0)',
 
     invitation: {

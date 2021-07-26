@@ -10,3 +10,7 @@ O site será implementado com Nuxtjs (framework Vue), junto ao Vuetify. Algumas 
   <li> Tela de História </li>
   <li> Interface (site) puramente estático </li>
 </ul>
+
+## Link para o site
+
+<a href="https://marrymeproject.netlify.app" >https://marrymeproject.netlify.app</a>
